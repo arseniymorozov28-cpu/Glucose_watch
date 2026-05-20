@@ -1,0 +1,2 @@
+-keep class com.weargluco.watch.data.api.models.** { *; }
+-keep class kotlinx.serialization.** { *; }
