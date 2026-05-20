@@ -1,0 +1,39 @@
+name: AppleGlucoBridge
+
+options:
+  bundleIdPrefix: com.weargluco
+  deploymentTarget:
+    iOS: "17.0"
+
+settings:
+  base:
+    SWIFT_VERSION: 5.10
+    PRODUCT_NAME: AppleGlucoBridgePhone
+    DEVELOPMENT_TEAM: ""
+
+targets:
+  AppleGlucoBridgePhone:
+    type: application
+    platform: iOS
+    sources:
+      - path: Sources/Shared
+      - path: Sources/iPhoneApp
+    info:
+      path: Sources/iPhoneApp/Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.weargluco.applebridge
+        INFOPLIST_KEY_CFBundleDisplayName: AppleGlucoBridge
+        INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription: The app uses Bluetooth to broadcast glucose readings to your watch.
+        INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: true
+        INFOPLIST_KEY_UIBackgroundModes:
+          - bluetooth-peripheral
+        INFOPLIST_KEY_LSRequiresIPhoneOS: true
+        INFOPLIST_KEY_UILaunchScreen_Generation: true
+        INFOPLIST_KEY_UIRequiresFullScreen: false
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+    dependencies:
+      - sdk: CoreBluetooth.framework

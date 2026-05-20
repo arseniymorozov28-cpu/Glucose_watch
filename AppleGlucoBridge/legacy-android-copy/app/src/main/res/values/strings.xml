@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GlucoWatch</string>
+    <string name="watch_face_name">GlucoWatch Face</string>
+    <string name="watch_face_description">Watch face with glucose data from LibreLinkUp</string>
+</resources>
